@@ -715,13 +715,18 @@ document.documentElement.classList.add('js');
     if(mail.value&&!mail.checkValidity()){mail.classList.add('erreur');ok=false;}
     if(!ok){statut.className='statut ko';statut.textContent='Merci de remplir les champs obligatoires.';form.querySelector('.erreur').focus();return;}
     const bouton=form.querySelector('button');bouton.disabled=true;statut.className='statut';statut.textContent='Envoi en cours…';
+    const reussi=()=>{form.classList.add('envoye');statut.className='statut ok';statut.textContent='Merci ! Votre demande est bien envoyée. Je vous rappelle très vite.';};
+    const echec=()=>{form.classList.remove('envoye');bouton.disabled=false;statut.className='statut ko';statut.textContent="L'envoi n'a pas fonctionné. Vous pouvez m'appeler au 06 01 76 29 47.";};
+    let fini=false;
+    /* Le service transmet le mail tout de suite mais répond parfois très lentement :
+       si rien n'a échoué au bout de 4 s, on confirme au visiteur, l'envoi continue en arrière-plan. */
+    const delai=setTimeout(()=>{if(!fini)reussi();},4000);
     try{
-      const r=await fetch('https://formsubmit.co/ajax/contact@arkeobtp.fr',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)});
+      const r=await fetch('https://formsubmit.co/ajax/contact@arkeobtp.fr',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form),keepalive:true});
+      fini=true;clearTimeout(delai);
       if(!r.ok)throw new Error();
-      form.classList.add('envoye');statut.className='statut ok';statut.textContent='Merci ! Votre demande est bien envoyée. Je vous rappelle très vite.';
-    }catch(e){
-      bouton.disabled=false;statut.className='statut ko';statut.textContent="L'envoi n'a pas fonctionné. Vous pouvez m'appeler au 06 01 76 29 47.";
-    }
+      reussi();
+    }catch(e){fini=true;clearTimeout(delai);echec();}
   });
 
   const wrap=document.getElementById('etapes'),etapes=[...wrap.querySelectorAll('.etape')];
