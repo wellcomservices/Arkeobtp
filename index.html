@@ -719,8 +719,8 @@ document.documentElement.classList.add('js');
     const echec=()=>{form.classList.remove('envoye');bouton.disabled=false;statut.className='statut ko';statut.textContent="L'envoi n'a pas fonctionné. Vous pouvez m'appeler au 06 01 76 29 47.";};
     let fini=false;
     /* Le service transmet le mail tout de suite mais répond parfois très lentement :
-       si rien n'a échoué au bout de 4 s, on confirme au visiteur, l'envoi continue en arrière-plan. */
-    const delai=setTimeout(()=>{if(!fini)reussi();},4000);
+       si rien n'a échoué au bout de 1,5 s, on confirme au visiteur, l'envoi continue en arrière-plan. */
+    const delai=setTimeout(()=>{if(!fini)reussi();},1500);
     try{
       const r=await fetch('https://formsubmit.co/ajax/contact@arkeobtp.fr',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form),keepalive:true});
       fini=true;clearTimeout(delai);
