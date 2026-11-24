@@ -95,16 +95,16 @@ p{margin:0 0 1em}
 .logo{display:block;position:relative}
 .logo img{height:44px;width:auto;transition:opacity .4s}
 .logo .logo-couleur{position:absolute;inset:0;opacity:0}
-.entete.defile .logo .logo-blanc{opacity:0}
-.entete.defile .logo .logo-couleur{opacity:1}
 .nav{display:flex;align-items:center;gap:32px}
 .nav a{text-decoration:none;font-weight:700;color:#fff;position:relative;padding:6px 0;transition:color .4s}
 .nav a:not(.btn)::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--orange);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--courbe)}
 .nav a:not(.btn):hover::after{transform:scaleX(1);transform-origin:left}
 .nav .btn{padding:12px 22px;font-size:1rem}
-.entete.defile{background:rgba(255,255,255,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 6px 30px rgba(31,42,68,.1)}
-.entete.defile .nav a:not(.btn){color:var(--texte)}
-@media (max-width:960px){.nav a:not(.btn){display:none}}
+.entete{pointer-events:none}
+.entete .logo,.entete .nav{pointer-events:auto}
+.logo{transition:opacity .4s,transform .5s var(--courbe)}
+.entete.defile .logo{opacity:0;transform:translateY(-20px);pointer-events:none}
+.entete.defile .nav .btn{box-shadow:0 12px 30px rgba(31,42,68,.3)}
 @media (max-width:520px){.nav .btn{display:none}.logo img{height:36px}}
 
 /* Héros */
@@ -340,6 +340,7 @@ p{margin:0 0 1em}
 .jeu-cadre canvas{display:block;width:100%;height:100%;cursor:pointer;touch-action:manipulation}
 .jeu-ecran{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;text-align:center;padding:24px;background:rgba(24,34,58,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:opacity .45s var(--courbe),visibility .45s}
 .jeu-ecran.cache{opacity:0;visibility:hidden}
+.jeu-ecran.leger{background:linear-gradient(180deg,rgba(24,34,58,.92) 0%,rgba(24,34,58,.75) 45%,rgba(24,34,58,.15) 100%);backdrop-filter:none;-webkit-backdrop-filter:none;align-content:start;padding-top:28px}
 .jeu-titre{font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:800;letter-spacing:-.03em;margin:0 0 8px;line-height:1.1}
 .jeu-msg{color:rgba(255,255,255,.85);max-width:380px;margin:0 0 22px}
 .jeu-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
@@ -387,12 +388,6 @@ p{margin:0 0 1em}
   <div class="conteneur">
     <a class="logo" href="#" aria-label="Arkéo BTP, retour en haut de page"><img class="logo-blanc" src="img/logo-arkeo-blanc.png" alt="Arkéo BTP" width="766" height="326"><img class="logo-couleur" src="img/logo-arkeo.png" alt="" width="766" height="326"></a>
     <nav class="nav" aria-label="Navigation principale">
-      <a href="#services">Services</a>
-      <a href="#exigence">L'artisan</a>
-      <a href="#methode">Méthode</a>
-      <a href="#zone">Zone</a>
-      <a href="#faq">Questions</a>
-      <a href="#jeu">Le jeu</a>
       <a class="btn btn-orange" href="#contact">Devis gratuit</a>
     </nav>
   </div>
@@ -602,10 +597,10 @@ p{margin:0 0 1em}
     <div class="jeu-texte monte">
       <span class="surtitre">Petite pause</span>
       <h2 id="titre-jeu">À vous de monter le mur&nbsp;!</h2>
-      <p class="intro">Posez les briques bien alignées : tout ce qui dépasse tombe. Arriverez-vous à monter les 10 rangs&nbsp;?</p>
+      <p class="intro">Posez les briques bien alignées : tout ce qui dépasse tombe. Arriverez-vous à monter un mur bien droit de 10 rangs&nbsp;?</p>
       <ul class="jeu-aide">
         <li><b>Clic</b>, <b>toucher</b> ou <b>barre d'espace</b> pour poser la brique</li>
-        <li>Pose parfaite&nbsp;: la brique garde toute sa largeur</li>
+        <li>Bien centrée, la brique garde toute sa largeur</li>
       </ul>
       <div class="jeu-scores" aria-live="polite"><span>Rangs posés <b id="jeu-rangs">0</b>/10</span><span>Record <b id="jeu-record">0</b></span></div>
     </div>
@@ -732,12 +727,12 @@ document.documentElement.classList.add('js');
   const wrap=document.getElementById('etapes'),etapes=[...wrap.querySelectorAll('.etape')];
   const majEtapes=()=>{
     const r=wrap.getBoundingClientRect(),vh=window.innerHeight,vert=window.innerWidth<=960;
-    let p=vert?(vh*.62-r.top)/r.height:(vh*.78-r.top)/(vh*.55);
+    let p=vert?(vh*.78-(r.top+36))/Math.max(1,r.height-72):(vh*.78-r.top)/(vh*.55);
     p=Math.max(0,Math.min(1,p));
     if(calme)p=1;
     wrap.style.setProperty('--p',p.toFixed(3));
     let dernier=-1;
-    etapes.forEach((e,i)=>{const seuil=vert?i/etapes.length+.02:i/(etapes.length-1)*.96+.02;const a=p>=seuil;e.classList.toggle('actif',a);if(a)dernier=i;});
+    etapes.forEach((e,i)=>{const a=vert?(calme||e.getBoundingClientRect().top<vh*.8):p>=i/(etapes.length-1)*.96+.02;e.classList.toggle('actif',a);if(a)dernier=i;});
     etapes.forEach((e,i)=>e.classList.toggle('courant',i===dernier&&p<1));
   };
   window.addEventListener('scroll',()=>requestAnimationFrame(majEtapes),{passive:true});
@@ -766,11 +761,11 @@ document.documentElement.classList.add('js');
     const cv=document.getElementById('jeu-canvas'),ctx=cv.getContext('2d'),ecran=document.getElementById('jeu-ecran');
     const elRangs=document.getElementById('jeu-rangs'),elRecord=document.getElementById('jeu-record');
     const W=560,H=480,BH=34,OBJ=10,SOL=H-40,LARG0=220;
-    let pile,cour,chutes,etat='attente',camera=0,cible=0,record=0,vitesse,dernier=0,eclats=[],textes=[];
+    let penche=0,sens=1,pile,cour,chutes,etat='attente',camera=0,cible=0,record=0,vitesse,dernier=0,eclats=[],textes=[];
     try{record=+localStorage.getItem('arkeo-record')||0;}catch(e){}
     elRecord.textContent=record;
     const dpr=Math.min(2,window.devicePixelRatio||1);cv.width=W*dpr;cv.height=H*dpr;ctx.scale(dpr,dpr);
-    const reinit=()=>{pile=[{x:(W-LARG0)/2,w:LARG0,y:SOL-BH}];chutes=[];eclats=[];textes=[];camera=0;cible=0;vitesse=2.6;nouvelle();majRangs();};
+    const reinit=()=>{penche=0;sens=Math.random()<.5?-1:1;pile=[{x:(W-LARG0)/2,w:LARG0,y:SOL-BH}];chutes=[];eclats=[];textes=[];camera=0;cible=0;vitesse=2.6;nouvelle();majRangs();};
     const nouvelle=()=>{const h=pile[pile.length-1];const gauche=pile.length%2===0;cour={x:gauche?0:W-h.w,w:h.w,y:h.y-BH,dir:gauche?1:-1};};
     const majRangs=()=>{elRangs.textContent=pile.length-1;};
     const brique=(x,y,w,coul,joint)=>{
@@ -784,7 +779,7 @@ document.documentElement.classList.add('js');
       ctx.save();ctx.translate(0,camera);
       ctx.fillStyle='#2E5751';ctx.fillRect(0,SOL,W,H+400);
       ctx.fillStyle='rgba(255,255,255,.08)';ctx.fillRect(0,SOL,W,3);
-      pile.forEach((b,i)=>brique(b.x,b.y,b.w,i===0?'#8A6A52':(i%2?'#C9643A':'#B4552F'),i>0));
+      pile.forEach((b,i)=>{if(!b.rot){brique(b.x,b.y,b.w,i===0?'#8A6A52':(i%2?'#C9643A':'#B4552F'),i>0);return;}ctx.save();ctx.translate(b.x+b.w/2,b.y+BH/2);ctx.rotate(b.rot);brique(-b.w/2,-BH/2,b.w,i%2?'#C9643A':'#B4552F',true);ctx.restore();});
       chutes.forEach(c=>{ctx.save();ctx.translate(c.x+c.w/2,c.y+BH/2);ctx.rotate(c.r);ctx.globalAlpha=Math.max(0,c.a);brique(-c.w/2,-BH/2,c.w,'#C9643A',false);ctx.restore();});
       if(etat==='jeu'&&cour)brique(cour.x,cour.y,cour.w,'#FF5A1F',true);
       eclats.forEach(e=>{ctx.globalAlpha=Math.max(0,e.v);ctx.fillStyle='#FFD3BF';ctx.fillRect(e.x,e.y,3,3);});ctx.globalAlpha=1;
@@ -807,15 +802,16 @@ document.documentElement.classList.add('js');
       if(etat!=='jeu')return;
       const h=pile[pile.length-1];let x=cour.x,w=cour.w;
       const ecart=x-h.x;
-      if(Math.abs(ecart)<5){x=h.x;textes.push({txt:'Parfait !',x:x+w/2,y:cour.y-6,v:1});for(let k=0;k<14;k++)eclats.push({x:x+Math.random()*w,y:cour.y+BH,vx:(Math.random()-.5)*3,vy:-Math.random()*3,v:1});}
-      else{
+      if(Math.abs(ecart)<5){textes.push({txt:'Pas mal !',x:x+w/2,y:cour.y-6,v:1});for(let k=0;k<14;k++)eclats.push({x:x+Math.random()*w,y:cour.y+BH,vx:(Math.random()-.5)*3,vy:-Math.random()*3,v:1});}
+      {
         const g=Math.max(x,h.x),d=Math.min(x+w,h.x+h.w),nw=d-g;
         if(nw<=0){chutes.push({x,y:cour.y,w,vy:0,vx:cour.dir*1.5,r:0,vr:cour.dir*.04,a:1});fin(false);return;}
         const reste=ecart>0?{x:d,w:w-nw}:{x:x,w:w-nw};
         chutes.push({x:reste.x,y:cour.y,w:reste.w,vy:0,vx:ecart>0?1.5:-1.5,r:0,vr:ecart>0?.05:-.05,a:1});
         x=g;w=nw;
       }
-      pile.push({x,y:cour.y,w});majRangs();
+      penche+=(.35+Math.random()*.65)*.016*sens;const rot=penche+(Math.random()-.5)*.06;
+      pile.push({x:x+penche*140,y:cour.y+Math.abs(rot)*10,w,rot});majRangs();
       if(pile.length-1>=OBJ){fin(true);return;}
       vitesse+=.32;
       const hautPile=SOL-pile.length*BH;if(hautPile<H*.45)cible=H*.45-hautPile;
@@ -823,13 +819,13 @@ document.documentElement.classList.add('js');
     };
     const afficher=(titre,msg,boutons)=>{document.getElementById('jeu-titre').innerHTML=titre;document.getElementById('jeu-msg').textContent=msg;document.getElementById('jeu-actions').innerHTML=boutons;ecran.classList.remove('cache');const b=ecran.querySelector('button,a');if(b)b.focus({preventScroll:true});};
     const fin=gagne=>{
-      etat='fin';cour=null;const rangs=pile.length-1;
+      etat='fin';cour=null;const rangs=pile.length-1;if(gagne){cible=0;ecran.classList.add('leger');}else ecran.classList.remove('leger');
       if(rangs>record){record=rangs;elRecord.textContent=record;try{localStorage.setItem('arkeo-record',record);}catch(e){}}
       const cta='<a class="btn btn-orange" href="#contact">Demander mon devis gratuit</a><button class="btn btn-contour" type="button" data-rejouer>Rejouer</button>';
       setTimeout(()=>{
-        if(gagne)afficher('Bravo, mur monté&nbsp;!','10 rangs bien droits. Pour votre vrai projet, je m’occupe de tout, au millimètre.',cta);
+        if(gagne)afficher('10 rangs posés… mais regardez ce mur&nbsp;!','Il penche un peu, non ? Un mur d’aplomb, qui tient des années, c’est mon métier.',cta);
         else afficher('Le mur est tombé au rang '+(rangs+1)+'&nbsp;!',rangs>=5?'Pas mal du tout. Mais pour un mur qui tient vraiment, c’est mon métier.':'Pas si simple, hein ? Heureusement, monter des murs droits, c’est mon métier.',cta);
-      },gagne?700:900);
+      },gagne?2200:900);
       lancerBoucle();
     };
     const demarrer=()=>{reinit();etat='jeu';ecran.classList.add('cache');cv.focus({preventScroll:true});lancerBoucle();};
