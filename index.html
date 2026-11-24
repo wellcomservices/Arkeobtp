@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maçon à Antibes : rénovation et extension de maison | Arkéo BTP</title>
+<meta name="description" content="Artisan maçon expérimenté à Antibes et alentours : rénovation, extension, aménagement intérieur et travaux extérieurs. Un seul interlocuteur du devis à la finition. Devis gratuit.">
+<link rel="canonical" href="https://www.arkeobtp.fr/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Arkéo BTP · Votre maçon à Antibes">
+<meta property="og:description" content="Rénovation, extension, intérieur et extérieur. Un artisan qui réalise vos travaux lui-même. Devis gratuit.">
+<meta property="og:url" content="https://www.arkeobtp.fr/">
+<meta property="og:image" content="https://www.arkeobtp.fr/img/heros-briques.webp">
+<meta property="og:locale" content="fr_FR">
+<meta name="theme-color" content="#1F2A44">
+<link rel="icon" href="img/logo-arkeo.png">
+<link rel="preload" href="fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Arkéo BTP",
+  "legalName": "ARKEO BTP",
+  "vatID": "FR64992884031",
+  "address": {"@type":"PostalAddress","streetAddress":"400 avenue Roumanille","postalCode":"06410","addressLocality":"Biot","addressCountry":"FR"},
+  "description": "Artisan maçon : rénovation, extension, aménagement intérieur et travaux extérieurs à Antibes et alentours.",
+  "url": "https://www.arkeobtp.fr/",
+  "telephone": "+33601762947",
+  "email": "contact@arkeobtp.fr",
+  "areaServed": ["Antibes","Juan-les-Pins","Golfe-Juan","Vallauris","Biot","Valbonne","Villeneuve-Loubet","Cagnes-sur-Mer"],
+  "openingHoursSpecification": [
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Thursday","Friday"],"opens":"08:00","closes":"19:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"18:00"}
+  ]
+}
+</script>
+<style>
+/*
+VOICE : artisan premium, chaleureux, sûr de lui.
+IDEA : le mur qu'on monte brique par brique ; chaque section se pose comme un rang.
+PICTURE : la main gantée qui pose une brique, révélée en grand dans le héros.
+COLOUR and TYPE : bleu nuit dominant, vert Arkéo en soutien, orange en accent ; Manrope auto-hébergée.
+LAYOUT : héros plein écran, bandeau défilant, cartes photo, bande en parallaxe, étapes, zone, appel final.
+*/
+@font-face{font-family:"Manrope";src:url("fonts/manrope.woff2") format("woff2");font-weight:200 800;font-display:swap}
+:root{
+  --vert:#2E5751;--vert-fonce:#22423D;--orange:#FF5A1F;--orange-fonce:#E8501A;--orange-clair:#FF7A45;
+  --nuit:#1F2A44;--nuit-2:#18223A;--nuit-3:#28365A;--gris:#F3F5F6;--gris-2:#E3E8EA;--texte:#1F2A44;--doux:#4A5570;
+  --rayon:22px;--ombre:0 24px 60px rgba(31,42,68,.16);
+  --police:"Manrope","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --courbe:cubic-bezier(.2,.75,.15,1);
+}
+*,*::before,*::after{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px;overflow-x:clip}
+body{margin:0;font-family:var(--police);color:var(--texte);background:#fff;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{line-height:1.06;letter-spacing:-.025em;margin:0 0 .5em;text-wrap:balance}
+h2{font-size:clamp(2.1rem,4.6vw,3.4rem);font-weight:800}
+h3{font-size:1.3rem;font-weight:800}
+p{margin:0 0 1em}
+.conteneur{width:min(1240px,100% - 40px);margin-inline:auto}
+.section{padding:clamp(72px,10vw,128px) 0}
+.surtitre{display:inline-flex;align-items:center;gap:12px;font-size:.95rem;font-weight:700;color:var(--vert);margin-bottom:14px}
+.surtitre::before{content:"";width:34px;height:2px;background:var(--orange)}
+.clair .surtitre{color:#fff}
+.centre{text-align:center}.centre .surtitre{justify-content:center}
+.intro{max-width:620px;color:var(--doux);font-size:1.12rem}
+.centre .intro{margin:0 auto 56px}
+.lien-evitement{position:absolute;left:-999px;top:8px;background:var(--nuit);color:#fff;padding:10px 16px;border-radius:8px;z-index:100}
+.lien-evitement:focus{left:8px}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
+
+/* Barre de progression */
+.progression{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--orange);transform-origin:left;transform:scaleX(0);z-index:70}
+
+/* Boutons */
+.btn{position:relative;display:inline-flex;align-items:center;gap:10px;padding:17px 30px;border-radius:999px;font-weight:800;font-size:1.2rem;text-decoration:none;border:2px solid transparent;line-height:1.2;overflow:hidden;isolation:isolate;transition:transform .35s var(--courbe),box-shadow .35s,color .35s,border-color .35s}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;transform:translateY(101%);transition:transform .45s var(--courbe)}
+.btn:hover{transform:translateY(-3px)}
+.btn:hover::before{transform:none}
+.btn svg{width:20px;height:20px;flex:none;transition:transform .35s var(--courbe)}
+.btn:hover svg.fleche{transform:translateX(4px)}
+.btn-orange{background:var(--orange);color:#fff;box-shadow:0 12px 30px rgba(255,90,31,.35)}
+.btn-orange::before{background:var(--orange-fonce)}
+.btn-contour{border-color:rgba(255,255,255,.5);color:#fff}
+.btn-contour::before{background:#fff}
+.btn-contour:hover{color:var(--nuit);border-color:#fff}
+.btn-nuit{background:var(--nuit);color:#fff}
+.btn-nuit::before{background:var(--vert)}
+
+/* En-tête */
+.entete{position:fixed;top:0;left:0;right:0;z-index:60;transition:background-color .4s,box-shadow .4s,transform .4s var(--courbe)}
+.entete .conteneur{display:flex;align-items:center;justify-content:space-between;gap:24px;height:80px}
+.logo{display:block;position:relative}
+.logo img{height:44px;width:auto;transition:opacity .4s}
+.logo .logo-couleur{position:absolute;inset:0;opacity:0}
+.entete.defile .logo .logo-blanc{opacity:0}
+.entete.defile .logo .logo-couleur{opacity:1}
+.nav{display:flex;align-items:center;gap:32px}
+.nav a{text-decoration:none;font-weight:700;color:#fff;position:relative;padding:6px 0;transition:color .4s}
+.nav a:not(.btn)::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--orange);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--courbe)}
+.nav a:not(.btn):hover::after{transform:scaleX(1);transform-origin:left}
+.nav .btn{padding:12px 22px;font-size:1rem}
+.entete.defile{background:rgba(255,255,255,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 6px 30px rgba(31,42,68,.1)}
+.entete.defile .nav a:not(.btn){color:var(--texte)}
+@media (max-width:960px){.nav a:not(.btn){display:none}}
+@media (max-width:520px){.nav .btn{display:none}.logo img{height:36px}}
+
+/* Héros */
+.heros{position:relative;background:var(--nuit);color:#fff;overflow:hidden;isolation:isolate;min-height:100svh;display:flex;align-items:center}
+.heros::before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(900px 600px at 70% 30%,rgba(46,87,81,.5),transparent 70%),radial-gradient(700px 500px at 0% 100%,rgba(255,90,31,.16),transparent 70%)}
+.heros .conteneur{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center;gap:64px;padding:130px 0 90px}
+.heros h1{font-size:clamp(2.9rem,6.6vw,5.6rem);font-weight:800;letter-spacing:-.045em;line-height:.98;margin:22px 0 26px}
+.mot{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.06em}
+.mot>span{display:inline-block;transform:translateY(105%);animation:monte 1s var(--courbe) forwards}
+.heros h1 .accent{color:var(--orange-clair)}
+@keyframes monte{to{transform:none}}
+.heros .accroche{font-size:1.22rem;max-width:540px;color:rgba(255,255,255,.82);margin-bottom:36px}
+.actions{display:flex;flex-wrap:wrap;gap:14px}
+.fondu{opacity:0;animation:fondu 1s var(--courbe) forwards}
+@keyframes fondu{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.pastille{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 12px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);font-size:.95rem;font-weight:700}
+.pastille i{width:9px;height:9px;border-radius:50%;background:#3DDC97;box-shadow:0 0 0 0 rgba(61,220,151,.6);animation:bip 2.2s infinite}
+@keyframes bip{70%{box-shadow:0 0 0 10px rgba(61,220,151,0)}100%{box-shadow:0 0 0 0 rgba(61,220,151,0)}}
+.garanties{display:flex;flex-wrap:wrap;gap:10px 28px;margin:38px 0 0;padding:0;list-style:none;color:rgba(255,255,255,.82);font-size:1rem}
+.garanties li{display:flex;align-items:center;gap:9px}
+.garanties svg{width:20px;height:20px;color:var(--orange-clair)}
+.cadre{position:relative;aspect-ratio:4/5;max-height:74svh;margin-left:auto;width:100%}
+.cadre .photo{position:absolute;inset:0;border-radius:28px;overflow:hidden;clip-path:inset(100% 0 0 0 round 28px);animation:devoile 1.4s .35s var(--courbe) forwards;box-shadow:0 40px 90px rgba(0,0,0,.45)}
+.cadre .photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.25);animation:zoom 2.4s .35s var(--courbe) forwards}
+@keyframes devoile{to{clip-path:inset(0 0 0 0 round 28px)}}
+@keyframes zoom{to{transform:scale(1.04)}}
+.cadre::before{content:"";position:absolute;inset:-18px 18px 18px -18px;border:2px solid rgba(255,122,69,.55);border-radius:32px;z-index:-1;opacity:0;animation:fondu 1s 1.2s forwards}
+.badge{position:absolute;z-index:2;background:#fff;color:var(--nuit);border-radius:18px;padding:14px 18px;box-shadow:0 20px 44px rgba(0,0,0,.3);font-size:.95rem;line-height:1.35;display:flex;gap:12px;align-items:center;white-space:nowrap;opacity:0}
+.badge b{display:block;font-size:1.05rem}
+.badge .rond{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;flex:none}
+.badge-1{left:-44px;bottom:12%;animation:fondu .9s 1.4s var(--courbe) forwards,flotte 6s 2.4s ease-in-out infinite}
+.badge-2{right:-24px;top:9%;animation:fondu .9s 1.65s var(--courbe) forwards,flotte 6s 3s ease-in-out infinite}
+@keyframes flotte{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.defiler{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);width:28px;height:44px;border:2px solid rgba(255,255,255,.45);border-radius:20px}
+.defiler::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:#fff;animation:roule 1.8s infinite}
+@keyframes roule{0%{opacity:1;transform:none}100%{opacity:0;transform:translateY(14px)}}
+@media (max-width:960px){
+  .heros{min-height:auto}
+  .heros .conteneur{grid-template-columns:1fr;gap:56px;padding:120px 0 80px}
+  .cadre{max-width:480px;margin:0 auto;max-height:none}
+  .badge-1{left:-10px}.badge-2{right:-8px}.defiler{display:none}
+}
+@media (max-width:520px){.badge{font-size:.85rem;padding:10px 14px}.badge .rond{width:36px;height:36px}.pastille{font-size:.85rem}}
+
+/* Bandeau défilant */
+.defilant{background:var(--orange);color:#fff;overflow:hidden;padding:22px 0;transform:rotate(-1.2deg) scale(1.02);margin-top:-14px;position:relative;z-index:3;box-shadow:0 16px 40px rgba(255,90,31,.25)}
+.piste{display:flex;width:max-content;animation:file 32s linear infinite}
+.piste span{display:flex;align-items:center;gap:36px;padding-right:36px;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;letter-spacing:-.02em;white-space:nowrap}
+.piste i{width:12px;height:12px;background:#fff;transform:rotate(45deg);flex:none;opacity:.85}
+@keyframes file{to{transform:translateX(-50%)}}
+
+/* Services */
+.services{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.service{position:relative;border-radius:var(--rayon);overflow:hidden;min-height:500px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:28px;isolation:isolate;text-decoration:none;box-shadow:0 10px 30px rgba(31,42,68,.12);transition:transform .5s var(--courbe),box-shadow .5s}
+.service img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.1s var(--courbe)}
+.service::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(31,42,68,.05) 20%,rgba(31,42,68,.55) 52%,rgba(24,34,58,.96) 100%);transition:background .5s}
+.service:hover{transform:translateY(-8px);box-shadow:var(--ombre)}
+.service:hover img{transform:scale(1.08)}
+.service .num{position:absolute;top:22px;left:24px;font-weight:800;font-size:.95rem;background:rgba(255,255,255,.16);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:5px 13px}
+.service h3{font-size:1.55rem;margin-bottom:8px}
+.service p{margin:0;color:rgba(255,255,255,.88);font-size:1rem}
+.service .details{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s var(--courbe),margin .55s}
+.service ul{list-style:none;padding:0;margin:0;overflow:hidden}
+.service li{padding:5px 0 5px 22px;position:relative;font-size:.97rem;color:rgba(255,255,255,.92)}
+.service li::before{content:"";position:absolute;left:2px;top:14px;width:8px;height:8px;background:var(--orange-clair);transform:rotate(45deg)}
+.service:hover .details,.service:focus-within .details{grid-template-rows:1fr;margin-top:14px}
+@media (hover:none),(max-width:1100px){.service .details{grid-template-rows:1fr;margin-top:14px}}
+@media (max-width:1100px){.services{grid-template-columns:repeat(2,minmax(0,1fr))}.service{min-height:440px}}
+@media (max-width:600px){.services{grid-template-columns:1fr}.service{min-height:420px}.service::after{background:linear-gradient(180deg,rgba(31,42,68,.1) 0%,rgba(24,34,58,.72) 38%,rgba(24,34,58,.97) 100%)}}
+
+/* Exigence */
+.exigence{background:var(--gris)}
+.deux-col{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:80px;align-items:center}
+.photo-haute{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5;box-shadow:var(--ombre)}
+.photo-haute img{width:100%;height:115%;object-fit:cover;will-change:transform}
+.etiquette{position:absolute;left:22px;bottom:22px;background:rgba(31,42,68,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;border-radius:16px;padding:16px 20px;max-width:280px;font-size:.95rem;line-height:1.45}
+.etiquette b{display:block;font-size:1.1rem;margin-bottom:2px}
+.citation{font-size:clamp(1.3rem,2.4vw,1.65rem);font-weight:700;line-height:1.4;color:var(--nuit);margin:0 0 28px;letter-spacing:-.01em}
+.citation em{font-style:normal;background:linear-gradient(transparent 62%,rgba(255,90,31,.28) 62%)}
+.engagements{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 30px;margin:34px 0 38px}
+.engagement{display:flex;gap:16px}
+.engagement .ico{width:52px;height:52px;border-radius:16px;background:#fff;color:var(--vert);display:grid;place-items:center;flex:none;box-shadow:0 6px 18px rgba(31,42,68,.08)}
+.engagement .ico svg{width:26px;height:26px}
+.engagement h3{font-size:1.08rem;margin:4px 0 4px}
+.engagement p{margin:0;color:var(--doux);font-size:.96rem;line-height:1.5}
+.trace path,.trace circle,.trace rect{stroke-dasharray:80;stroke-dashoffset:80;transition:stroke-dashoffset 1.4s var(--courbe)}
+.vu .trace path,.vu .trace circle,.vu .trace rect{stroke-dashoffset:0}
+@media (max-width:960px){.deux-col{grid-template-columns:1fr;gap:56px}.photo-haute{aspect-ratio:4/3}}
+@media (max-width:520px){.engagements{grid-template-columns:1fr}}
+
+/* Bande parallaxe */
+.parallaxe{position:relative;min-height:78svh;display:grid;place-items:center;overflow:hidden;color:#fff;text-align:center;isolation:isolate}
+.parallaxe img{position:absolute;left:0;top:-15%;width:100%;height:130%;object-fit:cover;z-index:-2;will-change:transform}
+.parallaxe::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(24,34,58,.45),rgba(24,34,58,.75))}
+.parallaxe blockquote{margin:0;max-width:900px;padding:0 20px}
+.parallaxe p{font-size:clamp(2rem,4.8vw,3.8rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;margin:0 0 22px}
+.parallaxe p .accent{color:var(--orange-clair)}
+.parallaxe footer{font-size:1.05rem;color:rgba(255,255,255,.85)}
+.lieu{position:absolute;right:24px;bottom:22px;display:inline-flex;align-items:center;gap:8px;font-size:.9rem;font-weight:700;color:#fff;background:rgba(24,34,58,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:8px 14px}
+.lieu svg{width:16px;height:16px;color:var(--orange-clair)}
+
+/* Méthode */
+.methode{background:var(--nuit);color:#fff;position:relative;overflow:hidden}
+.methode .intro{color:rgba(255,255,255,.75)}
+.etapes-wrap{position:relative;--p:0}
+.etapes{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;position:relative}
+.ligne{position:absolute;top:35px;left:12.5%;right:12.5%;height:3px;border-radius:3px;background:rgba(255,255,255,.14);overflow:hidden}
+.ligne i{position:absolute;inset:0;background:linear-gradient(90deg,var(--orange),var(--orange-clair));transform-origin:left;transform:scaleX(var(--p));transition:transform .25s linear}
+.etape{position:relative;text-align:center;padding:0 6px;isolation:isolate;transition:opacity .7s var(--courbe),transform .7s var(--courbe)}
+.js .etape{opacity:.35;transform:translateY(18px)}
+.js .etape.actif{opacity:1;transform:none}
+.etape .rond{position:relative;width:72px;height:72px;border-radius:50%;margin:0 auto 26px;background:var(--nuit-3);border:2px solid rgba(255,255,255,.22);color:#fff;display:grid;place-items:center;transition:background .6s,border-color .6s,transform .6s var(--courbe),box-shadow .6s}
+.etape .rond svg{width:30px;height:30px}
+.etape .rond svg *{stroke-dasharray:70;stroke-dashoffset:0;transition:stroke-dashoffset 1.1s .15s var(--courbe)}
+.js .etape:not(.actif) .rond svg *{stroke-dashoffset:70}
+.etape.actif .rond{background:var(--orange);border-color:var(--orange);box-shadow:0 0 0 10px rgba(255,90,31,.14),0 18px 40px rgba(255,90,31,.35)}
+.etape.courant .rond::after{content:"";position:absolute;inset:-2px;border-radius:50%;border:2px solid var(--orange-clair);animation:onde 1.8s ease-out infinite}
+@keyframes onde{from{transform:scale(1);opacity:.9}to{transform:scale(1.7);opacity:0}}
+.etape:hover .rond{transform:scale(1.08) rotate(-6deg)}
+.grand-num{display:block;font-size:.9rem;font-weight:800;color:rgba(255,255,255,.55);margin-bottom:6px;transition:color .6s}
+.etape.actif .grand-num{color:var(--orange-clair)}
+.etape h3{font-size:1.22rem}
+.etape p{color:rgba(255,255,255,.8);font-size:1rem;margin:0}
+@media (max-width:960px){
+  .etapes{grid-template-columns:1fr;gap:42px}
+  .ligne{top:36px;bottom:36px;left:35px;right:auto;width:3px;height:auto}
+  .ligne i{transform-origin:top;transform:scaleY(var(--p))}
+  .etape{text-align:left;padding:0 0 0 100px;min-height:72px}
+  .etape .rond{position:absolute;left:0;top:0;margin:0}
+}
+
+
+/* Zone */
+.zone{background:var(--gris)}
+.communes{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:26px 0 30px}
+.communes li{background:#fff;border:1px solid var(--gris-2);border-radius:999px;padding:9px 18px;font-weight:700;font-size:.97rem;transition:transform .3s var(--courbe),border-color .3s,color .3s}
+.communes li:hover{transform:translateY(-3px);border-color:var(--vert);color:var(--vert)}
+.communes li.principal{background:var(--vert);border-color:var(--vert);color:#fff}
+.carte-zone{background:#fff;border-radius:28px;padding:16px;box-shadow:var(--ombre)}
+.carte-zone svg{width:100%;height:auto;border-radius:18px}
+.perimetre{stroke-dasharray:1400;stroke-dashoffset:1400;transition:stroke-dashoffset 2.4s var(--courbe)}
+.vu .perimetre{stroke-dashoffset:0}
+.carte-zone .p{opacity:0;transform:scale(.3);transform-box:fill-box;transform-origin:center;transition:opacity .5s,transform .6s var(--courbe)}
+.carte-zone.vu .p{opacity:1;transform:none}
+@keyframes pulse{0%{r:10;opacity:.6}100%{r:30;opacity:0}}
+.pulse{animation:pulse 2.4s ease-out infinite}
+
+/* FAQ */
+.faq-section{background:linear-gradient(180deg,#fff,var(--gris))}
+.faq-grille{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:72px;align-items:start}
+.faq-intro{position:sticky;top:110px}
+.faq-appel{margin-top:30px;background:#fff;border:1px solid var(--gris-2);border-radius:20px;padding:24px;display:grid;gap:16px;box-shadow:0 10px 30px rgba(31,42,68,.06)}
+.faq-appel p{margin:0}
+.faq-appel .btn{justify-self:start;font-size:1.05rem;padding:14px 24px}
+.faq details{position:relative;background:#fff;border:1px solid var(--gris-2);border-radius:20px;margin-bottom:14px;overflow:hidden;transition:transform .45s var(--courbe),box-shadow .45s,border-color .45s,opacity 1s var(--courbe)}
+.faq details::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--orange);transform:scaleY(0);transform-origin:top;transition:transform .5s var(--courbe)}
+.faq details:hover{border-color:rgba(46,87,81,.35);box-shadow:0 12px 30px rgba(31,42,68,.08)}
+.js .faq details.monte.vu:hover{transform:translateX(6px)}
+.faq details[open]{border-color:transparent;box-shadow:var(--ombre)}
+.faq details[open]::before{transform:scaleY(1)}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:18px;padding:22px 22px 22px 24px;font-weight:800;font-size:1.12rem;line-height:1.35}
+.faq summary::-webkit-details-marker{display:none}
+.q-num{flex:none;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:.9rem;font-weight:800;background:var(--gris);color:var(--vert);transition:background .4s,color .4s,transform .5s var(--courbe)}
+.faq details[open] .q-num{background:var(--vert);color:#fff;transform:rotate(-8deg)}
+.q-txt{flex:1}
+.q-ico{flex:none;position:relative;width:34px;height:34px;border-radius:50%;background:var(--gris);transition:background .4s,transform .5s var(--courbe)}
+.q-ico::before,.q-ico::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2.5px;margin:-1.25px 0 0 -7px;border-radius:2px;background:var(--vert);transition:transform .5s var(--courbe),background .4s}
+.q-ico::after{transform:rotate(90deg)}
+.faq details[open] .q-ico{background:#FFE6DC;transform:rotate(180deg)}
+.faq details[open] .q-ico::after{transform:rotate(0)}
+.faq details[open] .q-ico::before,.faq details[open] .q-ico::after{background:var(--orange-fonce)}
+.faq summary:hover .q-ico{background:#E3EEEC}
+.reponse{overflow:hidden}
+.reponse p{margin:0;padding:0 26px 26px 82px;color:var(--doux);font-size:1.05rem;transition:opacity .5s .1s,transform .5s .1s var(--courbe)}
+.faq details:not([open]) .reponse p,.faq details.ferme .reponse p{opacity:0;transform:translateY(-8px)}
+@media (max-width:960px){.faq-grille{grid-template-columns:1fr;gap:40px}.faq-intro{position:static}}
+@media (max-width:520px){.reponse p{padding:0 20px 22px 20px}.faq summary{gap:12px;padding:18px}.q-num{width:34px;height:34px}}
+.visuellement-cache{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Appel final */
+.final{background:var(--nuit);color:#fff;position:relative;overflow:hidden;isolation:isolate}
+.final::before{content:"";position:absolute;width:900px;height:900px;right:-300px;top:-300px;z-index:-1;border-radius:50%;background:radial-gradient(circle,rgba(255,90,31,.32),transparent 65%);animation:respire 9s ease-in-out infinite}
+@keyframes respire{50%{transform:scale(1.15) translate(-40px,30px)}}
+.final .grille{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+.final h2{font-size:clamp(2.4rem,5.4vw,4.2rem);letter-spacing:-.04em}
+.final .accroche{font-size:1.2rem;color:rgba(255,255,255,.82);max-width:560px;margin-bottom:34px}
+.coord{display:grid;gap:14px}
+.coord a,.coord div{display:flex;gap:16px;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:20px 22px;text-decoration:none;transition:background .35s,transform .35s var(--courbe),border-color .35s}
+.coord a:hover{background:rgba(255,255,255,.12);transform:translateX(6px);border-color:rgba(255,122,69,.6)}
+.coord .ico{width:48px;height:48px;border-radius:14px;background:var(--orange);display:grid;place-items:center;flex:none}
+.coord .ico svg{width:22px;height:22px;color:#fff}
+.coord small{display:block;color:rgba(255,255,255,.7);font-size:.9rem}
+.coord b{font-size:1.15rem}
+@media (max-width:960px){.final .grille{grid-template-columns:1fr;gap:44px}}
+
+
+/* Formulaire */
+.formulaire{background:#fff;color:var(--texte);border-radius:26px;padding:clamp(26px,4vw,40px);box-shadow:0 40px 90px rgba(0,0,0,.35)}
+.formulaire h3{font-size:1.5rem;margin-bottom:4px}
+.mention-oblig{font-size:.9rem;color:var(--doux);margin-bottom:22px}
+.rangee{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+.champ{margin-bottom:16px}
+.champ label{display:block;font-weight:700;font-size:.95rem;margin-bottom:6px}
+.champ label span{color:var(--orange-fonce)}
+.champ input,.champ select,.champ textarea{width:100%;font:inherit;font-size:16px;color:var(--texte);padding:14px 16px;border:1.5px solid var(--gris-2);border-radius:12px;background:var(--gris);transition:border-color .25s,box-shadow .25s,background-color .25s}
+.champ textarea{resize:vertical;min-height:130px}
+.champ input:focus,.champ select:focus,.champ textarea:focus{outline:none;border-color:var(--orange);background:#fff;box-shadow:0 0 0 4px rgba(255,90,31,.15)}
+.champ .erreur{border-color:#C62828;background:#FFF5F5}
+.formulaire .btn{width:100%;justify-content:center;margin-top:6px;border:0;cursor:pointer;font-family:inherit}
+.formulaire .btn[disabled]{opacity:.7;cursor:wait}
+.statut{margin:14px 0 0;font-weight:700;min-height:1.2em}
+.statut.ok{color:var(--vert)}.statut.ko{color:#C62828}
+.rgpd{font-size:.85rem;color:var(--doux);margin:10px 0 0;line-height:1.5}
+.rgpd a{color:var(--vert);font-weight:700}
+.pot{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+.final .coord{margin-top:30px}
+.envoye .champ,.envoye .rangee,.envoye .btn,.envoye .mention-oblig{display:none}
+@media (max-width:600px){.rangee{grid-template-columns:1fr;gap:0}}
+
+
+/* Jeu */
+.jeu-section{background:var(--nuit);color:#fff;overflow:hidden}
+.jeu-section .surtitre{color:#fff}
+.jeu-section .intro{color:rgba(255,255,255,.8)}
+.jeu-grille{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:center}
+.jeu-aide{list-style:none;padding:0;margin:22px 0 26px;display:grid;gap:10px;color:rgba(255,255,255,.85)}
+.jeu-aide li{position:relative;padding-left:26px}
+.jeu-aide li::before{content:"";position:absolute;left:2px;top:10px;width:10px;height:10px;background:var(--orange-clair);transform:rotate(45deg)}
+.jeu-scores{display:flex;gap:14px;flex-wrap:wrap}
+.jeu-scores span{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:12px 18px;font-size:.95rem}
+.jeu-scores b{font-size:1.4rem;margin-left:6px;color:var(--orange-clair)}
+.jeu-cadre{position:relative;border-radius:26px;overflow:hidden;background:var(--nuit-2);box-shadow:0 40px 90px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.1);aspect-ratio:7/6}
+.jeu-cadre canvas{display:block;width:100%;height:100%;cursor:pointer;touch-action:manipulation}
+.jeu-ecran{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;text-align:center;padding:24px;background:rgba(24,34,58,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:opacity .45s var(--courbe),visibility .45s}
+.jeu-ecran.cache{opacity:0;visibility:hidden}
+.jeu-titre{font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:800;letter-spacing:-.03em;margin:0 0 8px;line-height:1.1}
+.jeu-msg{color:rgba(255,255,255,.85);max-width:380px;margin:0 0 22px}
+.jeu-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.jeu-actions .btn{font-size:1.05rem;padding:14px 24px;cursor:pointer;font-family:inherit}
+.jeu-actions .btn-contour{background:transparent}
+@media (max-width:960px){.jeu-grille{grid-template-columns:1fr;gap:36px}}
+@media (max-width:520px){.jeu-cadre{aspect-ratio:auto;height:440px}.jeu-titre{font-size:1.35rem}.jeu-msg{font-size:.95rem;margin-bottom:16px}.jeu-actions .btn{font-size:.98rem;padding:12px 18px}}
+
+/* Pied */
+.pied{background:var(--nuit-2);color:rgba(255,255,255,.78);padding:56px 0 30px;font-size:.95rem}
+.pied .grille{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.pied h3{color:#fff;font-size:1rem;margin-bottom:12px}
+.pied a{color:#fff;text-decoration:none}
+.pied a:hover{text-decoration:underline}
+.pied .logo-pied{display:inline-block;margin-bottom:16px}
+.pied .logo-pied img{height:46px;width:auto}
+.pied .bas{border-top:1px solid rgba(255,255,255,.14);padding-top:22px;font-size:.88rem;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+@media (max-width:760px){.pied .grille{grid-template-columns:1fr;gap:28px}}
+
+/* Barre d'appel mobile */
+.barre-mobile{display:none}
+@media (max-width:700px){
+  .barre-mobile{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:12px;right:12px;bottom:12px;z-index:65;transform:translateY(150%);transition:transform .5s var(--courbe)}
+  .barre-mobile.visible{transform:none}
+  .barre-mobile .btn{justify-content:center;padding:15px 10px;font-size:1.05rem;box-shadow:0 12px 30px rgba(31,42,68,.35)}
+  body{padding-bottom:84px}
+}
+
+/* Apparitions au défilement */
+.js .monte{opacity:0;transform:translateY(48px);transition:opacity 1s var(--courbe),transform 1s var(--courbe)}
+.js .monte.vu{opacity:1;transform:none}
+.js .d1{transition-delay:.12s}.js .d2{transition-delay:.24s}.js .d3{transition-delay:.36s}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important;scroll-behavior:auto!important}
+  .js .monte{opacity:1;transform:none}
+  .piste{animation:none}
+}
+</style>
+</head>
+<body>
+<a class="lien-evitement" href="#contenu">Aller au contenu</a>
+<div class="progression" id="progression" aria-hidden="true"></div>
+
+<header class="entete" id="entete">
+  <div class="conteneur">
+    <a class="logo" href="#" aria-label="Arkéo BTP, retour en haut de page"><img class="logo-blanc" src="img/logo-arkeo-blanc.png" alt="Arkéo BTP" width="766" height="326"><img class="logo-couleur" src="img/logo-arkeo.png" alt="" width="766" height="326"></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#services">Services</a>
+      <a href="#exigence">L'artisan</a>
+      <a href="#methode">Méthode</a>
+      <a href="#zone">Zone</a>
+      <a href="#faq">Questions</a>
+      <a href="#jeu">Le jeu</a>
+      <a class="btn btn-orange" href="#contact">Devis gratuit</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+
+<section class="heros" aria-labelledby="titre-heros">
+  <div class="conteneur">
+    <div>
+      <span class="pastille fondu" style="animation-delay:.1s"><i></i>Artisan maçon à Antibes et alentours</span>
+      <h1 id="titre-heros">
+        <span class="mot"><span style="animation-delay:.25s">Votre</span></span>
+        <span class="mot"><span style="animation-delay:.33s">maison</span></span>
+        <span class="mot"><span style="animation-delay:.41s">entre</span></span>
+        <span class="mot"><span style="animation-delay:.49s">de</span></span>
+        <span class="mot"><span class="accent" style="animation-delay:.57s">bonnes</span></span>
+        <span class="mot"><span class="accent" style="animation-delay:.65s">mains.</span></span>
+      </h1>
+      <p class="accroche fondu" style="animation-delay:.85s">Rénovation, extension, intérieur et extérieur. Un maçon expérimenté qui vous conseille, réalise vos travaux lui-même et soigne chaque finition.</p>
+      <div class="actions fondu" style="animation-delay:1s">
+        <a class="btn btn-orange" href="#contact">Demander mon devis gratuit
+          <svg class="fleche" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-contour" href="tel:+33601762947">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          06 01 76 29 47</a>
+      </div>
+      <ul class="garanties fondu" style="animation-delay:1.15s">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Devis gratuit et sans engagement</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Un seul interlocuteur</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Paiement par étapes</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Assuré en garantie décennale</li>
+      </ul>
+    </div>
+    <div class="cadre">
+      <div class="photo"><img src="img/heros-briques.webp" alt="Main gantée d'un maçon posant une brique sur un lit de mortier" width="1100" height="1650" fetchpriority="high"></div>
+      <div class="badge badge-1" aria-hidden="true">
+        <span class="rond" style="background:#FFE9E0;color:#E8501A"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+        <span><b>Devis gratuit</b>visite et conseils sur place</span>
+      </div>
+      <div class="badge badge-2" aria-hidden="true">
+        <span class="rond" style="background:#E3EEEC;color:#2E5751"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span>
+        <span><b>Un seul artisan</b>du devis à la finition</span>
+      </div>
+    </div>
+  </div>
+  <span class="defiler" aria-hidden="true"></span>
+</section>
+
+<div class="defilant" aria-hidden="true">
+  <div class="piste">
+    <span>Rénovation <i></i> Extension <i></i> Aménagement intérieur <i></i> Travaux extérieurs <i></i> Maçonnerie traditionnelle <i></i></span>
+    <span>Rénovation <i></i> Extension <i></i> Aménagement intérieur <i></i> Travaux extérieurs <i></i> Maçonnerie traditionnelle <i></i></span>
+  </div>
+</div>
+
+<section class="section" id="services" aria-labelledby="titre-services">
+  <div class="conteneur">
+    <div class="centre monte">
+      <span class="surtitre">Ce que je fais</span>
+      <h2 id="titre-services">Quel est votre projet&nbsp;?</h2>
+      <p class="intro">Du petit chantier à l'agrandissement de votre maison, je réalise vos travaux de maçonnerie de A à Z, avec le même soin.</p>
+    </div>
+    <div class="services">
+      <article class="service monte">
+        <img src="img/renovation.webp" alt="Cuisine en cours de rénovation" loading="lazy" width="900" height="1350">
+        <span class="num">01</span>
+        <h3>Rénovation</h3>
+        <p>Votre maison ou votre appartement retrouve une seconde vie.</p>
+        <div class="details"><ul><li>Ouverture de murs</li><li>Reprise de maçonnerie</li><li>Redistribution des pièces</li><li>Rénovation complète</li></ul></div>
+      </article>
+      <article class="service monte d1">
+        <img src="img/extension.webp" alt="Extension de maison en cours de construction" loading="lazy" width="900" height="675">
+        <span class="num">02</span>
+        <h3>Extension</h3>
+        <p>Gagnez des mètres carrés sans quitter la maison que vous aimez.</p>
+        <div class="details"><ul><li>Étude de faisabilité</li><li>Fondations et dalle</li><li>Élévation des murs</li><li>Raccord à l'existant</li></ul></div>
+      </article>
+      <article class="service monte d2">
+        <img src="img/interieur.webp" alt="Pièce intérieure en cours d'aménagement" loading="lazy" width="900" height="600">
+        <span class="num">03</span>
+        <h3>Intérieur</h3>
+        <p>Un intérieur repensé, pratique et impeccablement fini.</p>
+        <div class="details"><ul><li>Cloisons et plafonds</li><li>Salle de bain, cuisine</li><li>Chapes et sols</li><li>Aménagement de combles</li></ul></div>
+      </article>
+      <article class="service monte d3">
+        <img src="img/exterieur.webp" alt="Pose de pavés pour une terrasse" loading="lazy" width="900" height="600">
+        <span class="num">04</span>
+        <h3>Extérieur</h3>
+        <p>Des extérieurs solides, pensés pour le climat de la Côte d'Azur.</p>
+        <div class="details"><ul><li>Murets et clôtures</li><li>Terrasses et allées</li><li>Murs de soutènement</li><li>Enduits de façade</li></ul></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section exigence" id="exigence" aria-labelledby="titre-exigence">
+  <div class="conteneur deux-col">
+    <div class="photo-haute monte">
+      <img src="img/precision.webp" alt="Artisan contrôlant l'aplomb d'un mur avec un niveau" loading="lazy" width="1000" height="1500" data-parallaxe=".12">
+      <div class="etiquette"><b>Le souci du détail</b>Chaque mur d'aplomb, chaque finition vérifiée avant de partir.</div>
+    </div>
+    <div class="monte d1">
+      <span class="surtitre">L'exigence d'un artisan</span>
+      <h2 id="titre-exigence">Un artisan, pas un intermédiaire.</h2>
+      <p class="citation">Celui qui vient chez vous, fait le devis et réalise les travaux, c'est <em>la même personne</em>.</p>
+      <p>Maçon depuis de nombreuses années, je mets mon savoir-faire au service de votre maison, avec le souci du travail bien fait. Vous savez toujours qui est chez vous, et vous avez toujours la bonne personne au bout du fil.</p>
+      <div class="engagements">
+        <div class="engagement"><span class="ico trace"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span><div><h3>Un seul interlocuteur</h3><p>Pas de relais, pas d'information perdue.</p></div></div>
+        <div class="engagement"><span class="ico trace"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span><div><h3>Des devis clairs</h3><p>Détaillés poste par poste, sans surprise.</p></div></div>
+        <div class="engagement"><span class="ico trace"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><div><h3>Paiement par étapes</h3><p>Chaque étape validée ensemble avant d'être payée.</p></div></div>
+        <div class="engagement"><span class="ico trace"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><div><h3>Assuré en décennale</h3><p>Vos travaux couverts pendant 10 ans, auprès de MIC Insurance.</p></div></div>
+      </div>
+      <a class="btn btn-nuit" href="#contact">Parlons de votre projet
+        <svg class="fleche" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="parallaxe" aria-label="Notre philosophie">
+  <img src="img/antibes-remparts.webp" alt="Les remparts en pierre du Vieil Antibes face à la mer" loading="lazy" width="2000" height="1125" data-parallaxe=".18">
+  <span class="lieu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Les remparts du Vieil Antibes</span>
+  <blockquote class="monte">
+    <p>Le travail bien fait ne se voit pas tout de suite. <span class="accent">Il se ressent, des années après.</span></p>
+    <footer>Arkéo BTP, artisan maçon</footer>
+  </blockquote>
+</section>
+
+<section class="section methode clair" id="methode" aria-labelledby="titre-methode">
+  <div class="conteneur">
+    <div class="centre monte">
+      <span class="surtitre">Simple et transparent</span>
+      <h2 id="titre-methode">Comment ça se passe</h2>
+      <p class="intro">Quatre étapes, et vous savez toujours où en est votre chantier.</p>
+    </div>
+    <div class="etapes-wrap" id="etapes">
+    <span class="ligne" aria-hidden="true"><i></i></span>
+    <ol class="etapes">
+      <li class="etape"><span class="rond" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></span><span class="grand-num" aria-hidden="true">Étape 1</span><h3><span class="visuellement-cache">Étape 1 : </span>Vous me contactez</h3><p>Un appel ou le formulaire, et je vous rappelle pour en parler.</p></li>
+      <li class="etape"><span class="rond" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></span><span class="grand-num" aria-hidden="true">Étape 2</span><h3><span class="visuellement-cache">Étape 2 : </span>Je viens chez vous</h3><p>Je regarde l'existant, j'écoute vos envies, je vous conseille.</p></li>
+      <li class="etape"><span class="rond" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span><span class="grand-num" aria-hidden="true">Étape 3</span><h3><span class="visuellement-cache">Étape 3 : </span>Vous recevez le devis</h3><p>Détaillé, gratuit, avec un planning clair.</p></li>
+      <li class="etape"><span class="rond" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V11h14v10"/><path d="M5 15h14M9 11v4M15 15v6M12 11v4"/></svg></span><span class="grand-num" aria-hidden="true">Étape 4</span><h3><span class="visuellement-cache">Étape 4 : </span>Je réalise vos travaux</h3><p>Moi-même, proprement, jusqu'à la dernière finition.</p></li>
+    </ol>
+    </div>
+  </div>
+</section>
+
+
+<section class="section zone" id="zone" aria-labelledby="titre-zone">
+  <div class="conteneur deux-col">
+    <div class="monte">
+      <span class="surtitre">Zone d'intervention</span>
+      <h2 id="titre-zone">Près de chez vous</h2>
+      <p>J'interviens à Antibes et alentours, dans toutes les communes voisines.</p>
+      <ul class="communes">
+        <li class="principal">Antibes</li><li>Juan-les-Pins</li><li>Golfe-Juan</li><li>Vallauris</li><li>Biot</li><li>Valbonne</li><li>Villeneuve-Loubet</li><li>Cagnes-sur-Mer</li>
+      </ul>
+      <p>Votre ville n'est pas dans la liste ? <a href="tel:+33601762947"><strong>Appelez-moi</strong></a>, on en parle.</p>
+    </div>
+    <div class="carte-zone monte d1">
+      <svg viewBox="0 0 520 420" role="img" aria-labelledby="carte-titre">
+        <title id="carte-titre">Carte schématique de la zone d'intervention autour d'Antibes</title>
+        <rect width="520" height="420" fill="#EEF2F3"/>
+        <path d="M0 330 C60 322 90 310 120 318 C150 326 170 318 200 300 C228 284 250 296 268 318 C282 336 300 346 322 340 C338 336 340 312 350 290 C362 262 372 228 392 214 C414 200 440 196 470 178 C492 166 506 150 520 140 L520 420 L0 420 Z" fill="#CFE0E4"/>
+        <text x="330" y="392" fill="#5F7F88" font-size="15" font-weight="700" letter-spacing="3" font-family="inherit">MÉDITERRANÉE</text>
+        <path class="perimetre" d="M70 120 C140 70 300 60 430 110 C470 128 470 190 420 230 C380 262 350 330 300 330 C230 330 150 330 100 300 C50 270 30 160 70 120 Z" fill="none" stroke="#2E5751" stroke-width="2.5" stroke-dasharray="7 7"/>
+        <g font-family="inherit" font-size="15" font-weight="700" fill="#1F2A44">
+          <g class="p" style="transition-delay:.4s"><circle class="pulse" cx="322" cy="290" r="10" fill="#FF5A1F"/><circle cx="322" cy="290" r="11" fill="#FF5A1F" stroke="#fff" stroke-width="4"/><text x="300" y="268" font-size="18" font-weight="800">Antibes</text></g>
+          <g class="p" style="transition-delay:.6s"><circle cx="294" cy="318" r="7" fill="#2E5751" stroke="#fff" stroke-width="3"/><text x="196" y="352">Juan-les-Pins</text></g>
+          <g class="p" style="transition-delay:.7s"><circle cx="216" cy="312" r="7" fill="#2E5751" stroke="#fff" stroke-width="3"/><text x="96" y="352">Golfe-Juan</text></g>
+          <g class="p" style="transition-delay:.8s"><circle cx="166" cy="290" r="7" fill="#2E5751" stroke="#fff" stroke-width="3"/><text x="106" y="276">Vallauris</text></g>
+          <g class="p" style="transition-delay:.9s"><circle cx="258" cy="186" r="7" fill="#2E5751" stroke="#fff" stroke-width="3"/><text x="270" y="191">Biot</text></g>
+          <g class="p" style="transition-delay:1s"><circle cx="104" cy="164" r="7" fill="#2E5751" stroke="#fff" stroke-width="3"/><text x="70" y="148">Valbonne</text></g>
+          <g class="p" style="transition-delay:1.1s"><circle cx="330" cy="130" r="7" fill="#2E5751" stroke="#fff" stroke-width="3"/><text x="226" y="114">Villeneuve-Loubet</text></g>
+          <g class="p" style="transition-delay:1.2s"><circle cx="398" cy="118" r="7" fill="#2E5751" stroke="#fff" stroke-width="3"/><text x="372" y="96">Cagnes-sur-Mer</text></g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="section faq-section" id="faq" aria-labelledby="titre-faq">
+  <div class="conteneur faq-grille">
+    <div class="faq-intro monte">
+      <span class="surtitre">Questions fréquentes</span>
+      <h2 id="titre-faq">Vous vous demandez…</h2>
+      <p class="intro">Les réponses aux questions qu'on me pose le plus souvent avant un chantier.</p>
+      <div class="faq-appel">
+        <p><b>Une autre question&nbsp;?</b><br>Le plus simple, c'est d'en parler.</p>
+        <a class="btn btn-nuit" href="tel:+33601762947">06 01 76 29 47
+          <svg class="fleche" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="faq">
+      <details class="monte" style="transition-delay:0.00s"><summary><span class="q-num">01</span><span class="q-txt">Qui réalise les travaux ?</span><span class="q-ico" aria-hidden="true"></span></summary><div class="reponse"><p>C'est moi. Celui qui fait le devis est celui qui fait les travaux : vous avez le même interlocuteur du premier rendez-vous à la fin du chantier.</p></div></details>
+      <details class="monte" style="transition-delay:0.07s"><summary><span class="q-num">02</span><span class="q-txt">Êtes-vous assuré en garantie décennale ?</span><span class="q-ico" aria-hidden="true"></span></summary><div class="reponse"><p>Oui. Arkéo BTP est assuré en responsabilité civile décennale et en responsabilité civile professionnelle auprès de MIC Insurance. L'attestation vous est remise avec le devis.</p></div></details>
+      <details class="monte" style="transition-delay:0.14s"><summary><span class="q-num">03</span><span class="q-txt">Le devis est-il payant ?</span><span class="q-ico" aria-hidden="true"></span></summary><div class="reponse"><p>Non. Je me déplace pour voir votre projet et vous remets un devis détaillé, gratuit et sans engagement.</p></div></details>
+      <details class="monte" style="transition-delay:0.21s"><summary><span class="q-num">04</span><span class="q-txt">Comment se passent les paiements ?</span><span class="q-ico" aria-hidden="true"></span></summary><div class="reponse"><p>Les règlements suivent l'avancement du chantier : chaque étape est validée ensemble avant d'être payée. Vous gardez la maîtrise de votre budget du début à la fin.</p></div></details>
+      <details class="monte" style="transition-delay:0.28s"><summary><span class="q-num">05</span><span class="q-txt">Intervenez-vous pour de petits travaux ?</span><span class="q-ico" aria-hidden="true"></span></summary><div class="reponse"><p>Oui. Une cloison, un muret, une salle de bain : aucun projet n'est trop petit pour en discuter.</p></div></details>
+      <details class="monte" style="transition-delay:0.35s"><summary><span class="q-num">06</span><span class="q-txt">Peut-on ouvrir un mur porteur ?</span><span class="q-ico" aria-hidden="true"></span></summary><div class="reponse"><p>Souvent oui, avec les précautions qui s'imposent. Je vous explique sur place ce qui est possible et quels renforts prévoir.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="section jeu-section" id="jeu" aria-labelledby="titre-jeu">
+  <div class="conteneur jeu-grille">
+    <div class="jeu-texte monte">
+      <span class="surtitre">Petite pause</span>
+      <h2 id="titre-jeu">À vous de monter le mur&nbsp;!</h2>
+      <p class="intro">Posez les briques bien alignées : tout ce qui dépasse tombe. Arriverez-vous à monter les 10 rangs&nbsp;?</p>
+      <ul class="jeu-aide">
+        <li><b>Clic</b>, <b>toucher</b> ou <b>barre d'espace</b> pour poser la brique</li>
+        <li>Pose parfaite&nbsp;: la brique garde toute sa largeur</li>
+      </ul>
+      <div class="jeu-scores" aria-live="polite"><span>Rangs posés <b id="jeu-rangs">0</b>/10</span><span>Record <b id="jeu-record">0</b></span></div>
+    </div>
+    <div class="jeu-cadre monte d1">
+      <canvas id="jeu-canvas" width="560" height="480" role="img" aria-label="Jeu : empiler des briques pour monter un mur"></canvas>
+      <div class="jeu-ecran" id="jeu-ecran">
+        <p class="jeu-titre" id="jeu-titre">Prêt à construire&nbsp;?</p>
+        <p class="jeu-msg" id="jeu-msg">10 rangs bien droits, et le mur est à vous.</p>
+        <div class="jeu-actions" id="jeu-actions">
+          <button class="btn btn-orange" type="button" id="jeu-jouer">Jouer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section final" id="contact" aria-labelledby="titre-contact">
+  <div class="conteneur grille">
+    <div class="monte">
+      <span class="surtitre" style="color:#fff">Devis gratuit</span>
+      <h2 id="titre-contact">Un projet en tête&nbsp;? Parlons&#8209;en.</h2>
+      <p class="accroche">Décrivez votre projet en quelques lignes : je vous rappelle pour en discuter et convenir d'une visite. Le devis est gratuit et sans engagement.</p>
+      <div class="coord">
+        <a href="tel:+33601762947"><span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></span><span><small>Plutôt par téléphone&nbsp;?</small><b>06 01 76 29 47</b></span></a>
+        <div><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><small>Horaires</small><b>Lun., mar., jeu., ven. 8&nbsp;h&nbsp;–&nbsp;19&nbsp;h</b><small>Mercredi 9&nbsp;h&nbsp;–&nbsp;18&nbsp;h · Si je ne décroche pas, laissez un message.</small></span></div>
+      </div>
+    </div>
+    <form class="formulaire monte d1" id="formulaire" action="https://formsubmit.co/contact@arkeobtp.fr" method="POST" novalidate>
+      <input type="hidden" name="_subject" value="Nouvelle demande de devis depuis arkeobtp.fr">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" class="pot" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <h3>Votre demande de devis</h3>
+      <p class="mention-oblig">Les champs marqués d'un astérisque sont obligatoires.</p>
+      <div class="rangee">
+        <div class="champ"><label for="f-nom">Nom<span aria-hidden="true">&nbsp;*</span></label><input id="f-nom" name="Nom" type="text" autocomplete="name" required></div>
+        <div class="champ"><label for="f-tel">Téléphone<span aria-hidden="true">&nbsp;*</span></label><input id="f-tel" name="Téléphone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+      </div>
+      <div class="rangee">
+        <div class="champ"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+        <div class="champ"><label for="f-ville">Ville des travaux</label><input id="f-ville" name="Ville" type="text" autocomplete="address-level2"></div>
+      </div>
+      <div class="champ"><label for="f-type">Type de travaux</label>
+        <select id="f-type" name="Type de travaux"><option>Rénovation</option><option>Extension</option><option>Aménagement intérieur</option><option>Travaux extérieurs</option><option>Autre</option></select></div>
+      <div class="champ"><label for="f-msg">Votre projet en quelques mots<span aria-hidden="true">&nbsp;*</span></label><textarea id="f-msg" name="Message" rows="5" required></textarea></div>
+      <button class="btn btn-orange" type="submit">Envoyer ma demande
+        <svg class="fleche" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <p class="statut" id="statut" role="status" aria-live="polite"></p>
+      <p class="rgpd">Vos informations servent uniquement à vous recontacter au sujet de votre projet. Elles ne sont ni revendues ni utilisées à des fins publicitaires. <a href="confidentialite.html">En savoir plus</a></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="pied">
+  <div class="conteneur">
+    <div class="grille">
+      <div>
+        <span class="logo-pied"><img src="img/logo-arkeo-blanc.png" alt="Arkéo BTP" width="766" height="326" loading="lazy"></span>
+        <p>Artisan maçon à Antibes et alentours. Rénovation, extension, aménagement intérieur et travaux extérieurs.</p>
+        <p>Assurance décennale : MIC Insurance</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p><a href="tel:+33601762947">06 01 76 29 47</a><br><a href="mailto:contact@arkeobtp.fr">contact@arkeobtp.fr</a></p>
+      </div>
+      <div>
+        <h3>Horaires</h3>
+        <p>Lun., mar., jeu., ven. : 8&nbsp;h&nbsp;–&nbsp;19&nbsp;h<br>Mercredi : 9&nbsp;h&nbsp;–&nbsp;18&nbsp;h</p>
+      </div>
+    </div>
+    <div class="bas"><span>© <span id="annee">2026</span> Arkéo BTP · EURL · RCS Antibes 992&nbsp;884&nbsp;031</span><span><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a> · Photos d'illustration : Pexels</span></div>
+  </div>
+</footer>
+
+<div class="barre-mobile" id="barre-mobile">
+  <a class="btn btn-orange" href="tel:+33601762947">Appeler</a>
+  <a class="btn btn-nuit" href="#contact">Devis gratuit</a>
+</div>
+
+<script>
+document.documentElement.classList.add('js');
+{
+  const entete=document.getElementById('entete'),barre=document.getElementById('barre-mobile'),prog=document.getElementById('progression');
+  const para=[...document.querySelectorAll('[data-parallaxe]')];
+  const calme=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let attente=false;
+  const maj=()=>{
+    attente=false;
+    const y=window.scrollY,h=document.documentElement.scrollHeight-window.innerHeight;
+    entete.classList.toggle('defile',y>40);
+    barre.classList.toggle('visible',y>window.innerHeight*.7);
+    prog.style.transform='scaleX('+(h>0?y/h:0)+')';
+    if(!calme){for(const img of para){const r=img.parentElement.getBoundingClientRect();if(r.bottom<0||r.top>window.innerHeight)continue;const c=(r.top+r.height/2-window.innerHeight/2);img.style.transform='translate3d(0,'+(-c*parseFloat(img.dataset.parallaxe))+'px,0)';}}
+  };
+  window.addEventListener('scroll',()=>{if(!attente){attente=true;requestAnimationFrame(maj);}},{passive:true});
+  window.addEventListener('resize',maj);
+  maj();
+  const cibles=document.querySelectorAll('.monte,.carte-zone,.engagement');
+  if('IntersectionObserver' in window){
+    const observateur=new IntersectionObserver(es=>{for(const e of es){if(e.isIntersecting){e.target.classList.add('vu');observateur.unobserve(e.target);}}},{threshold:.18,rootMargin:'0px 0px -40px 0px'});
+    cibles.forEach(n=>observateur.observe(n));
+  }else{cibles.forEach(n=>n.classList.add('vu'));}
+
+  const form=document.getElementById('formulaire'),statut=document.getElementById('statut');
+  form.addEventListener('submit',async ev=>{
+    ev.preventDefault();
+    let ok=true;
+    for(const c of form.querySelectorAll('[required]')){const vide=!c.value.trim();c.classList.toggle('erreur',vide);c.setAttribute('aria-invalid',vide);if(vide)ok=false;}
+    const mail=form.querySelector('#f-email');
+    if(mail.value&&!mail.checkValidity()){mail.classList.add('erreur');ok=false;}
+    if(!ok){statut.className='statut ko';statut.textContent='Merci de remplir les champs obligatoires.';form.querySelector('.erreur').focus();return;}
+    const bouton=form.querySelector('button');bouton.disabled=true;statut.className='statut';statut.textContent='Envoi en cours…';
+    try{
+      const r=await fetch('https://formsubmit.co/ajax/contact@arkeobtp.fr',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)});
+      if(!r.ok)throw new Error();
+      form.classList.add('envoye');statut.className='statut ok';statut.textContent='Merci ! Votre demande est bien envoyée. Je vous rappelle très vite.';
+    }catch(e){
+      bouton.disabled=false;statut.className='statut ko';statut.textContent="L'envoi n'a pas fonctionné. Vous pouvez m'appeler au 06 01 76 29 47.";
+    }
+  });
+
+  const wrap=document.getElementById('etapes'),etapes=[...wrap.querySelectorAll('.etape')];
+  const majEtapes=()=>{
+    const r=wrap.getBoundingClientRect(),vh=window.innerHeight,vert=window.innerWidth<=960;
+    let p=vert?(vh*.62-r.top)/r.height:(vh*.78-r.top)/(vh*.55);
+    p=Math.max(0,Math.min(1,p));
+    if(calme)p=1;
+    wrap.style.setProperty('--p',p.toFixed(3));
+    let dernier=-1;
+    etapes.forEach((e,i)=>{const seuil=vert?i/etapes.length+.02:i/(etapes.length-1)*.96+.02;const a=p>=seuil;e.classList.toggle('actif',a);if(a)dernier=i;});
+    etapes.forEach((e,i)=>e.classList.toggle('courant',i===dernier&&p<1));
+  };
+  window.addEventListener('scroll',()=>requestAnimationFrame(majEtapes),{passive:true});
+  window.addEventListener('resize',majEtapes);majEtapes();
+  for(const d of document.querySelectorAll('.faq details')){
+    const sum=d.querySelector('summary'),rep=d.querySelector('.reponse');
+    sum.addEventListener('click',ev=>{
+      if(calme||!rep.animate)return;
+      ev.preventDefault();
+      if(d.dataset.anim)return;
+      d.dataset.anim='1';
+      if(d.open){
+        d.classList.add('ferme');
+        const a=rep.animate([{height:rep.offsetHeight+'px'},{height:'0px'}],{duration:380,easing:'cubic-bezier(.4,0,.2,1)'});
+        a.onfinish=()=>{d.open=false;d.classList.remove('ferme');delete d.dataset.anim;};
+      }else{
+        for(const autre of document.querySelectorAll('.faq details[open]')){if(autre!==d)autre.querySelector('summary').click();}
+        d.open=true;const h=rep.offsetHeight;
+        const a=rep.animate([{height:'0px'},{height:h+'px'}],{duration:480,easing:'cubic-bezier(.2,.75,.15,1)'});
+        a.onfinish=()=>{delete d.dataset.anim;};
+      }
+    });
+  }
+
+  {
+    const cv=document.getElementById('jeu-canvas'),ctx=cv.getContext('2d'),ecran=document.getElementById('jeu-ecran');
+    const elRangs=document.getElementById('jeu-rangs'),elRecord=document.getElementById('jeu-record');
+    const W=560,H=480,BH=34,OBJ=10,SOL=H-40,LARG0=220;
+    let pile,cour,chutes,etat='attente',camera=0,cible=0,record=0,vitesse,dernier=0,eclats=[],textes=[];
+    try{record=+localStorage.getItem('arkeo-record')||0;}catch(e){}
+    elRecord.textContent=record;
+    const dpr=Math.min(2,window.devicePixelRatio||1);cv.width=W*dpr;cv.height=H*dpr;ctx.scale(dpr,dpr);
+    const reinit=()=>{pile=[{x:(W-LARG0)/2,w:LARG0,y:SOL-BH}];chutes=[];eclats=[];textes=[];camera=0;cible=0;vitesse=2.6;nouvelle();majRangs();};
+    const nouvelle=()=>{const h=pile[pile.length-1];const gauche=pile.length%2===0;cour={x:gauche?0:W-h.w,w:h.w,y:h.y-BH,dir:gauche?1:-1};};
+    const majRangs=()=>{elRangs.textContent=pile.length-1;};
+    const brique=(x,y,w,coul,joint)=>{
+      ctx.fillStyle=coul;ctx.beginPath();ctx.roundRect(x+1,y+1,w-2,BH-2,4);ctx.fill();
+      ctx.fillStyle='rgba(255,255,255,.12)';ctx.fillRect(x+3,y+3,w-6,4);
+      if(joint){ctx.fillStyle='rgba(0,0,0,.18)';for(let jx=x+40;jx<x+w-10;jx+=64)ctx.fillRect(jx,y+4,2,BH-8);}
+    };
+    const dessin=()=>{
+      ctx.clearRect(0,0,W,H);
+      ctx.save();ctx.strokeStyle='rgba(255,255,255,.05)';for(let gx=0;gx<W;gx+=40){ctx.beginPath();ctx.moveTo(gx,0);ctx.lineTo(gx,H);ctx.stroke();}ctx.restore();
+      ctx.save();ctx.translate(0,camera);
+      ctx.fillStyle='#2E5751';ctx.fillRect(0,SOL,W,H+400);
+      ctx.fillStyle='rgba(255,255,255,.08)';ctx.fillRect(0,SOL,W,3);
+      pile.forEach((b,i)=>brique(b.x,b.y,b.w,i===0?'#8A6A52':(i%2?'#C9643A':'#B4552F'),i>0));
+      chutes.forEach(c=>{ctx.save();ctx.translate(c.x+c.w/2,c.y+BH/2);ctx.rotate(c.r);ctx.globalAlpha=Math.max(0,c.a);brique(-c.w/2,-BH/2,c.w,'#C9643A',false);ctx.restore();});
+      if(etat==='jeu'&&cour)brique(cour.x,cour.y,cour.w,'#FF5A1F',true);
+      eclats.forEach(e=>{ctx.globalAlpha=Math.max(0,e.v);ctx.fillStyle='#FFD3BF';ctx.fillRect(e.x,e.y,3,3);});ctx.globalAlpha=1;
+      textes.forEach(t=>{ctx.globalAlpha=Math.max(0,t.v);ctx.fillStyle='#fff';ctx.font='800 22px Manrope, system-ui, sans-serif';ctx.textAlign='center';ctx.fillText(t.txt,t.x,t.y);});ctx.globalAlpha=1;
+      ctx.restore();
+      if(etat==='jeu'){ctx.fillStyle='rgba(255,255,255,.55)';ctx.font='700 14px Manrope, system-ui, sans-serif';ctx.textAlign='left';ctx.fillText('Rang '+pile.length+' / '+OBJ,16,26);}
+    };
+    const boucle=t=>{
+      const dt=Math.min(32,t-(dernier||t))/16.67;dernier=t;
+      if(etat==='jeu'&&cour){cour.x+=cour.dir*vitesse*dt;if(cour.x<0&&cour.dir<0){cour.x=0;cour.dir=1;}if(cour.x>W-cour.w&&cour.dir>0){cour.x=W-cour.w;cour.dir=-1;}}
+      chutes.forEach(c=>{c.vy+=0.5*dt;c.y+=c.vy*dt;c.x+=c.vx*dt;c.r+=c.vr*dt;c.a-=0.012*dt;});chutes=chutes.filter(c=>c.a>0);
+      eclats.forEach(e=>{e.x+=e.vx*dt;e.y+=e.vy*dt;e.vy+=.25*dt;e.v-=.03*dt;});eclats=eclats.filter(e=>e.v>0);
+      textes.forEach(x=>{x.y-=.6*dt;x.v-=.018*dt;});textes=textes.filter(x=>x.v>0);
+      camera+=(cible-camera)*.12*dt;
+      dessin();
+      if(etat==='jeu'||chutes.length||eclats.length||textes.length||Math.abs(cible-camera)>.5)requestAnimationFrame(boucle);else dernier=0;
+    };
+    const lancerBoucle=()=>{if(!dernier)requestAnimationFrame(boucle);};
+    const poser=()=>{
+      if(etat!=='jeu')return;
+      const h=pile[pile.length-1];let x=cour.x,w=cour.w;
+      const ecart=x-h.x;
+      if(Math.abs(ecart)<5){x=h.x;textes.push({txt:'Parfait !',x:x+w/2,y:cour.y-6,v:1});for(let k=0;k<14;k++)eclats.push({x:x+Math.random()*w,y:cour.y+BH,vx:(Math.random()-.5)*3,vy:-Math.random()*3,v:1});}
+      else{
+        const g=Math.max(x,h.x),d=Math.min(x+w,h.x+h.w),nw=d-g;
+        if(nw<=0){chutes.push({x,y:cour.y,w,vy:0,vx:cour.dir*1.5,r:0,vr:cour.dir*.04,a:1});fin(false);return;}
+        const reste=ecart>0?{x:d,w:w-nw}:{x:x,w:w-nw};
+        chutes.push({x:reste.x,y:cour.y,w:reste.w,vy:0,vx:ecart>0?1.5:-1.5,r:0,vr:ecart>0?.05:-.05,a:1});
+        x=g;w=nw;
+      }
+      pile.push({x,y:cour.y,w});majRangs();
+      if(pile.length-1>=OBJ){fin(true);return;}
+      vitesse+=.32;
+      const hautPile=SOL-pile.length*BH;if(hautPile<H*.45)cible=H*.45-hautPile;
+      nouvelle();
+    };
+    const afficher=(titre,msg,boutons)=>{document.getElementById('jeu-titre').innerHTML=titre;document.getElementById('jeu-msg').textContent=msg;document.getElementById('jeu-actions').innerHTML=boutons;ecran.classList.remove('cache');const b=ecran.querySelector('button,a');if(b)b.focus({preventScroll:true});};
+    const fin=gagne=>{
+      etat='fin';cour=null;const rangs=pile.length-1;
+      if(rangs>record){record=rangs;elRecord.textContent=record;try{localStorage.setItem('arkeo-record',record);}catch(e){}}
+      const cta='<a class="btn btn-orange" href="#contact">Demander mon devis gratuit</a><button class="btn btn-contour" type="button" data-rejouer>Rejouer</button>';
+      setTimeout(()=>{
+        if(gagne)afficher('Bravo, mur monté&nbsp;!','10 rangs bien droits. Pour votre vrai projet, je m’occupe de tout, au millimètre.',cta);
+        else afficher('Le mur est tombé au rang '+(rangs+1)+'&nbsp;!',rangs>=5?'Pas mal du tout. Mais pour un mur qui tient vraiment, c’est mon métier.':'Pas si simple, hein ? Heureusement, monter des murs droits, c’est mon métier.',cta);
+      },gagne?700:900);
+      lancerBoucle();
+    };
+    const demarrer=()=>{reinit();etat='jeu';ecran.classList.add('cache');cv.focus({preventScroll:true});lancerBoucle();};
+    ecran.addEventListener('click',e=>{if(e.target.closest('#jeu-jouer,[data-rejouer]'))demarrer();});
+    cv.tabIndex=0;
+    cv.addEventListener('pointerdown',e=>{e.preventDefault();poser();});
+    cv.addEventListener('keydown',e=>{if(e.code==='Space'||e.key==='Enter'){e.preventDefault();poser();}});
+    reinit();dessin();
+  }
+  document.getElementById('annee').textContent=new Date().getFullYear();
+}
+</script>
+</body>
+</html>
